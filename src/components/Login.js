@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import Header from "./Header";
 import { validateCredentials } from "../utils/validateCredentials";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from "../utils/firebase"
 
 const Login = () => {
   const [logInfo, setlogInfo] = useState(true);
@@ -23,6 +26,34 @@ const Login = () => {
       password.current.value
     );
     setdisplayError(credentialsData);
+
+    if (credentialsData !== null) return;
+
+    if (logInfo === false) {
+      //const auth= getAuth();
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setdisplayError(errorCode + "- " + errorMessage);
+        });
+    } else {
+      //const auth= getAuth();
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setdisplayError(errorCode + "- " + errorMessage);
+        });
+    }
   };
 
   return (
