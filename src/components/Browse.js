@@ -1,13 +1,17 @@
 import Usegetpopularmovies from "../Hooks/Usegetpopularmovies";
 import Header from "./Header";
+import Mainvideopart from "./Mainvideopart";
+
 
 const Browse = ()=>{
 
-  Usegetpopularmovies();
+  const moviesList = Usegetpopularmovies();
+ 
 
   return(
     <div>
-      <Header/>     
+      <Header/>
+      {/* <Mainvideopart/> */}
     </div>
   );
 };

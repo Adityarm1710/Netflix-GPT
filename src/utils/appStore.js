@@ -3,17 +3,13 @@ import userReducer from "./userSlice";
 import moviesReducer from "./moviesSlice";
 
 
-// const reducer = {
-//   user: userReducer,
-//   movie: movieReducer,
-// };
+const reducer = {
+  user: userReducer,
+  movie: moviesReducer,
+};
 
 const appStore =  configureStore({
-  // reducer: reducer,
-  reducer:{
-    user: userReducer,
-    movies: moviesReducer,
-  }
+  reducer: reducer,
 });
 
 export default appStore;

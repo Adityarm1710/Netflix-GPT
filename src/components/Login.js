@@ -34,7 +34,7 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          if(user) setdisplayError("You are registered.")
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -46,7 +46,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          if(user) setdisplayError("Successfully loggedIn");
+         
         })
         .catch((error) => {
           const errorCode = error.code;

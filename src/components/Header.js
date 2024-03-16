@@ -15,7 +15,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ Uid: uid, email: email, displayName: displayName }));
@@ -25,6 +26,9 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    return ()=> unsubscribe();
+
   }, []);
 
   const userdata = useSelector((store) => store.user);
