@@ -19,19 +19,3 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth= getAuth();
 export default auth;
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
-// import 'firebase/firestore';
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAwd4umDOzcw6ZAHfuMn4yp6Z39dkuZI2w",
-//   authDomain: "netflixgpt-768cc.firebaseapp.com",
-//   projectId: "netflixgpt-768cc",
-//   storageBucket: "netflixgpt-768cc.appspot.com",
-//   messagingSenderId: "973642816188",
-//   appId:"1:973642816188:web:bd14d6e29adc01b9038eb9"
-// };
-
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// export default firebase;

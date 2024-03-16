@@ -4,7 +4,7 @@ import { validateCredentials } from "../utils/validateCredentials";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../utils/firebase"
-import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
   const [logInfo, setlogInfo] = useState(true);
@@ -13,7 +13,7 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
-  const navigate= useNavigate();
+  
 
   const handleLogin = () => {
     if (logInfo === true) setlogInfo(false);
@@ -34,7 +34,7 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          if(user) setdisplayError("You are registered.")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -46,8 +46,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          navigate("/Browse");
+          if(user) setdisplayError("Successfully loggedIn");
         })
         .catch((error) => {
           const errorCode = error.code;
