@@ -34,9 +34,9 @@ const Header = () => {
   const userdata = useSelector((store) => store.user);
 
   return (
-    <div className="bg-gradient-to-b w-full from-black absolute px-10 py-3 z-10 flex justify-between">
+    <div className="bg-gradient-to-b w-full from-black absolute px-10 py-4 z-10 flex justify-between">
       <img
-        className="w-[200px] "
+        className="w-[150px]"
         alt="logo"
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
       />
@@ -47,7 +47,7 @@ const Header = () => {
             alt="Browse logo"
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           />
-          <span className="cursor-pointer pl-3 pt-3" onClick={handleSignout}>
+          <span className="cursor-pointer text-white pl-3 pt-3" onClick={handleSignout}>
             Sign Out
           </span>
         </div>

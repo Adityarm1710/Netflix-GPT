@@ -5,13 +5,12 @@ import Mainvideopart from "./Mainvideopart";
 
 const Browse = ()=>{
 
-  const moviesList = Usegetpopularmovies();
+ Usegetpopularmovies();
  
-
   return(
     <div>
       <Header/>
-      {/* <Mainvideopart/> */}
+      <Mainvideopart/>
     </div>
   );
 };
