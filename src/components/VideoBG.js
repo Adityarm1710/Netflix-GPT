@@ -1,17 +1,20 @@
-import usegettrailorvideo from "../Hooks/usegettrailorvideo"
+import Usegettrailorvideo from "../Hooks/Usegettrailorvideo";
 import { useSelector } from "react-redux";
 
 const VideoBG = ({ movie_id }) => {
-
   const Trailor_id = useSelector((store) => store.movie?.trailorVideoData);
 
-  usegettrailorvideo(movie_id);
+  Usegettrailorvideo(movie_id);
 
   return (
     <div>
       <iframe
         className="w-screen aspect-video"
-        src={"https://www.youtube.com/embed/" + Trailor_id?.key + "?&autoplay=1&mute=1" }
+        src={
+          "https://www.youtube.com/embed/" +
+          Trailor_id?.key +
+          "?&autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist="+Trailor_id?.key
+        }
         title="YouTube video player"
       ></iframe>
     </div>

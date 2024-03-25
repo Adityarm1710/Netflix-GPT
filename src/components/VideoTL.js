@@ -1,6 +1,6 @@
 const VideoTL = ({title,overview})=>{
   return(
-    <div className=" absolute pt-[18%] px-16 w-screen aspect-video text-white bg-gradient-to-r from-black">
+    <div className=" absolute pt-[15%] px-20 w-screen aspect-video text-white bg-gradient-to-r from-black">
       <h1 className="font-bold text-4xl">
         {title}
       </h1>

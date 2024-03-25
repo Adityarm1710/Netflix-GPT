@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {addMovies} from "../utils/moviesSlice";
 
-const Usegetpopularmovies=()=>{
+const useGetNowPlayingMovies=()=>{
 
   const dispatch = useDispatch();
 
@@ -22,4 +22,4 @@ const Usegetpopularmovies=()=>{
     
 };
 
-export default Usegetpopularmovies;
+export default useGetNowPlayingMovies;

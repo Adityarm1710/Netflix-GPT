@@ -3,7 +3,7 @@ import { options } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addTrailorVideo } from "../utils/moviesSlice";
 
-const usegettrailorvideo = (movie_id) => {
+const Usegettrailorvideo = (movie_id) => {
 
   const dispatch = useDispatch();
 
@@ -26,4 +26,4 @@ const usegettrailorvideo = (movie_id) => {
   }, []);
 };
 
-export default usegettrailorvideo;
+export default Usegettrailorvideo;

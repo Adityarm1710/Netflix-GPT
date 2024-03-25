@@ -5,11 +5,9 @@ import { useSelector } from "react-redux";
 const Mainvideopart = () => {
 
   const moviesList = useSelector((store)=> store.movie.moviesList);
-  // console.log(moviesList);
-
   if (!moviesList) return;
 
-  const displayMovie = moviesList[1];
+  const displayMovie = moviesList[0];
   console.log(displayMovie);
 
   const {original_title, overview,id} = displayMovie;
