@@ -4,18 +4,27 @@ import Usegettopratedmovies from "../Hooks/Usegettopratedmovies";
 import Header from "./Header";
 import Mainvideopart from "./Mainvideopart";
 import Secondaryvideopart from "./secondaryvideopart";
+import { useSelector } from "react-redux";
+import GptBrowse from "./GptBrowse";
 
-const Browse = ()=>{
+const Browse = () => {
+  Usegetpopularmovies();
+  Usegettopratedmovies();
+  Usegetnowplayingmovies();
 
- Usegetpopularmovies();
- Usegettopratedmovies();
- Usegetnowplayingmovies();
+  const viewStatus = useSelector((store) => store.gpt.viewStatus);
 
-  return(
+  return (
     <div>
-      <Header/>
-      <Mainvideopart/>
-      <Secondaryvideopart/>
+      <Header />
+      { viewStatus ? (
+        <GptBrowse />
+      ) : (
+        <>
+          <Mainvideopart />
+          <Secondaryvideopart />
+        </>
+      )}
     </div>
   );
 };
